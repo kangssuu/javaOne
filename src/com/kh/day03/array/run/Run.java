@@ -14,11 +14,13 @@ public class Run {
 		Exercise_Array1 exArr = new Exercise_Array1();  //new : 메모리 할당한다
 //		exArr.exercise1();  // Exercise_Array1클래스 파일 안에 있는 exercise1()함수 불러오기
 //		exArr.exercise2();
-		exArr.arryCopyExercise();
+//		exArr.arryCopyExercise();
+		exArr.lottoExercise();
 		
 		Exercise_For exFor = new Exercise_For();
 //		exFor.forExercise2();
 //		exFor.forDouble1Exercise1();
+		
 		
 		// 반복문_실습문제_01
 			// 1번
@@ -139,33 +141,33 @@ public class Run {
 			// 1부터 사용자에게 입력 받은 수까지 중에서
 			// 1) 2와 3의 배수를 모두 출력하고
 			// 2) 2와 3의 공배수의 개수를 출력하세요.
-			System.out.println("숫자 하나 입력하세요 : ");
-			Scanner sc = new Scanner(System.in);
-			int input = sc.nextInt();
-			System.out.print("2의 배수는 : ");
-			for (int i = 1; i <= input; i++) {
-//				if(i % 2 == 0 || i % 3 == 0) {  // 2와 3의 배수 한번에 출력
+//			System.out.println("숫자 하나 입력하세요 : ");
+//			Scanner sc = new Scanner(System.in);
+//			int input = sc.nextInt();
+//			System.out.print("2의 배수는 : ");
+//			for (int i = 1; i <= input; i++) {
+////				if(i % 2 == 0 || i % 3 == 0) {  // 2와 3의 배수 한번에 출력
+////					System.out.print(i + " ");
+////				}
+//				if(i % 2 == 0) {
 //					System.out.print(i + " ");
 //				}
-				if(i % 2 == 0) {
-					System.out.print(i + " ");
-				}
-			}
-			System.out.println("입니다.");
-			System.out.print("3의 배수는 : ");
-			for (int i = 1; i <= input; i++) {
-				if(i % 3 == 0) {
-					System.out.print(i + " ");
-				}
-			}
-			System.out.println("입니다.");
-			System.out.print("2와 3의 공배수는 : ");
-			for (int i = 1; i <= input; i++) {
-				if(i % 2 == 0 && i % 3 == 0) {
-					System.out.print(i + " ");
-				}
-			}
-			System.out.println("입니다.");
+//			}
+//			System.out.println("입니다.");
+//			System.out.print("3의 배수는 : ");
+//			for (int i = 1; i <= input; i++) {
+//				if(i % 3 == 0) {
+//					System.out.print(i + " ");
+//				}
+//			}
+//			System.out.println("입니다.");
+//			System.out.print("2와 3의 공배수는 : ");
+//			for (int i = 1; i <= input; i++) {
+//				if(i % 2 == 0 && i % 3 == 0) {
+//					System.out.print(i + " ");
+//				}
+//			}
+//			System.out.println("입니다.");
 			
 			// 2번
 			/*
@@ -178,7 +180,13 @@ public class Run {
 			 **
 			 *
 			 */
-
+//			Scanner sc = new Scanner(System.in);
+//			System.out.println("정수를 입력하세요 : ");
+//			int input = sc.nextInt();
+//			for(int i = 0; i < 3; i++) {
+//				
+//			}
+			
 			// 3번
 			/*
 			 * 다음과 같은 실행 예제를 구현하세요.
