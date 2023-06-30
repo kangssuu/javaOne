@@ -10,6 +10,7 @@ public class Exercise_ForDouble3 {
 			}
 			count++;
 			System.out.println();
+			
 		}
 	}
 }
