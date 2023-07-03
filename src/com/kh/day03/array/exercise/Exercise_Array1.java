@@ -106,7 +106,6 @@ public class Exercise_Array1 {
 			}
 //			count++;
 //			check++;
-			System.out.println(lottoNums[i]);
 		}
 		
 		// 버블 정렬 해보기
@@ -117,9 +116,13 @@ public class Exercise_Array1 {
 				if(lottoNums[j] > lottoNums[j+1]) {
 					int tmp = lottoNums[j];  // 왼쪽에 있는 값 지워지기 전에 킵해 놓음.
 					lottoNums[j] = lottoNums[j+1];  // 오른쪽에 잇는 놈을 왼쪽에 대입함
-					lottoNums[j+1]= tmp;
+					lottoNums[j+1]= tmp;  // 킵해놓은 값을 오른쪽에 대입함
 				}
 			}
+		}
+		// 배열 출력하기
+		for(int i = 0; i < lottoNums.length; i++) {
+			System.out.print(lottoNums[i]+" ");
 		}
 	}
 }
