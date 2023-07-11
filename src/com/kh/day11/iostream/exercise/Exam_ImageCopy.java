@@ -17,9 +17,13 @@ public class Exam_ImageCopy {
 		File src = new File("c:\\Windows\\Web\\Wallpaper\\Theme1\\img1.jpg");  // ✿ Theme : 주제 ✿
 		File dest = new File("c:\\Temp\\copyimg.jpg");
 		int readByte;
-		byte[] readBytes = new byte[1024 * 10]; 
-		
+		byte[] readBytes = new byte[1024 * 10]; // 배열을 이용하여 10KB씩 쓰려고 함  1024Byte = 1KB, |  1024 * 10 => 10KB
+ 		
 		try {
+			File folder = new File("c:\\Temp");
+			if(!folder.exists()) {
+				folder.mkdir();
+			}
 			is = new FileInputStream(src);
 			os = new FileOutputStream(dest);
 			while(true) {
@@ -27,9 +31,9 @@ public class Exam_ImageCopy {
 				readByte = is.read(readBytes);
 //				if(readByte == -1) break;
 //				os.write((char)readByte);
-				os.write(readBytes, 0, readByte);
-				if(readByte < readBytes.length) break;
-			}
+				os.write(readBytes, 0, readByte);  // 고속 복사하는 코드, 10KB를 읽어서 복사함.
+				if(readByte < readBytes.length) break;  // 읽은 갯수가 현저히 적어지면 무한반복 탈출
+			} 
 			is.close();
 			os.close();
 			System.out.printf("%s를 %s로 복사하였습니다.", src.getPath(), dest.getPath());  // ✿ path : 경로 ✿
