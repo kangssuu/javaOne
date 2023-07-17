@@ -33,7 +33,7 @@ public class Exam_MouseListener extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				int x = e.getX();
 				int y = e.getY();
-				la.setLocation(x, y);
+				la.setLocation(x, y);  // 라벨의 위치를 마우스 클릭 포인트 위치로 옮김
 			}
 			
 			@Override
