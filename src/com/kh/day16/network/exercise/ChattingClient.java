@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class ChattingClient {
 	public static void main(String[] args) {
-		String address = "127.168.60.209";
+		String address = "192.168.60.209";
 		int port = 7777;
 		
 		OutputStream os = null;
