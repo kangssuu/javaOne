@@ -21,7 +21,7 @@ public class MotelController {
 	
 	public void printAllRooms() {
 		for(int i = 0; i < rList.size(); i++) {
-			if(rList.get(i)) {
+			if(!rList.get(i)) {
 				System.out.println((i +1) + "번 방이 현재 비어있습니다.");
 			}
 			else {
@@ -63,7 +63,7 @@ public class MotelController {
 				System.out.println(chosenRoom + "번 방에 퇴실하셨습니다." );
 			}
 			else {
-				System.out.println(chosenRoom + "번 방은 현재 손님이 있습니다.");
+				System.out.println(chosenRoom + "번 방은 현재 빈 방입니다.");
 			}
 			try {
 				Thread.sleep(250);
