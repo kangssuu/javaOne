@@ -1,5 +1,6 @@
 package com.kh.day17.oop.motel.run;
 
+import java.util.List;
 import java.util.Scanner;
 
 import com.kh.day17.oop.motel.controller.MotelController;
@@ -11,26 +12,41 @@ public class MotelRun {
 		MotelView view = new MotelView();
 		MotelController controller = new MotelController();
 		Scanner sc = new Scanner(System.in);
+		int chosenRoom = 0;
+		Boolean changeYn = null;	// checkIn 또는 checkOut에 따라 성공여부를 리턴함
+									// checkIn,checkOut 성공시 true 리턴
+									// checkIn,checkOut 실패시 false 리턴
 		end :
 			while(true) {
 				int choice = view.printMenu();
-				int chosenRoom = 0;
 				switch(choice) {
 				case 1 : 
 					chosenRoom = view.inputRoomNumber("입실");
-					controller.checkIn(chosenRoom);
+					if(chosenRoom != -1) {
+						changeYn = controller.checkIn(chosenRoom);
+						view.roomCheckin(changeYn, chosenRoom);
+					}
 					Thread.sleep(500);
 					break;
 				case 2 : 
 					chosenRoom = view.inputRoomNumber("퇴실");
-					controller.checkOut(chosenRoom);
+					if(chosenRoom != -1) {
+						changeYn = controller.checkOut(chosenRoom);
+						view.roomCheckOut(changeYn, chosenRoom);
+					}
 					Thread.sleep(500);
 					break;
 				case 3 : 
-					controller.printAllRooms();
+					List<Boolean> rList = controller.getAllRooms();
+					view.printAllRooms(rList);
 					Thread.sleep(2000);
 					break;
-				case 4 : System.out.println("종료되었습니다.");
+				case 4 : 
+					System.out.println(".");
+					Thread.sleep(600);
+					System.out.println(".");
+					Thread.sleep(600);
+					System.out.println("프로그램을 종료합니다.");
 					break end;
 				}
 			}

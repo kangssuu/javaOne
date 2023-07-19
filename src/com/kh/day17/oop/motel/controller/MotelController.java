@@ -19,62 +19,26 @@ public class MotelController {
 		}
 	}
 	
-	public void printAllRooms() {
-		for(int i = 0; i < rList.size(); i++) {
-			if(!rList.get(i)) {
-				System.out.println((i +1) + "번 방이 현재 비어있습니다.");
-			}
-			else {
-				System.out.println((i +1) + "번 방에는 현재 손님이 있습니다.");
-			}
-		}
+	public List<Boolean> getAllRooms() {
+		return rList;
 	}
 	
-	public void checkIn(int roomNo) {
-		if(roomNo > 0 && roomNo <= 10) {
-//			Room room = rList.get(roomNo -1);
-			Boolean room = rList.get(roomNo -1);
-//			if(!room.isAvailable()) {
-			if(!room) {
-//				room.setAvailable(true);
-				rList.set(roomNo -1, true);
-				System.out.println(roomNo + "번 방에 입실하셨습니다." );
-			}
-			else {
-				System.out.println(roomNo + "번 방은 현재 손님이 있습니다.");
-			}
-			try {
-				Thread.sleep(250);
-			} 
-			catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+	public Boolean checkIn(int roomNo) {
+		Boolean flag = false;
+		if(!rList.get(roomNo-1)) {
+			rList.set(roomNo-1, true);
+			return !flag;
 		}
-		else {
-			System.out.println("1번 방부터 10번 방까지 준비되어있습니다.");
-		}
+		return flag;
 	}
 	
-	public void checkOut(int chosenRoom) {
-		if(chosenRoom > 0 && chosenRoom <= 10) {
-			Boolean room = rList.get(chosenRoom -1);
-			if(room) {
-				rList.set(chosenRoom -1, false);
-				System.out.println(chosenRoom + "번 방에 퇴실하셨습니다." );
-			}
-			else {
-				System.out.println(chosenRoom + "번 방은 현재 빈 방입니다.");
-			}
-			try {
-				Thread.sleep(250);
-			} 
-			catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+	public Boolean checkOut(int chosenRoom) {
+		Boolean flag = false;
+		if(rList.get(chosenRoom-1)) {
+			rList.set(chosenRoom-1, false);
+			return !flag;
 		}
-		else {
-			System.out.println("1번 방부터 10번 방까지 준비되어있습니다.");
-		}
+		return flag;
 	}
 }
 			
